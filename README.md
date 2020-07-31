@@ -1,5 +1,5 @@
 ## Spring Boot in Docker Container
-This guide walks we through the process of building a Docker image for running a Spring Boot application.
+This guide walks us through the process of building a Docker image for running a Spring Boot application.
 
 ### What we’ll build
 Docker is a Linux container management toolkit with a "social" aspect, allowing users to publish container images and consume those published by others. A Docker image is a recipe for running a containerized process, and in this guide we will build one for a simple Spring boot application.
