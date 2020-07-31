@@ -1,0 +1,11 @@
+spring:
+    application.name: sb-docker
+
+management.endpoints.web.exposure.include: '*'
+management.endpoint.health.show-details: always
+
+info:
+    name: ${spring.application.name}
+    description: spring boot docker demo
+    environment: ${spring.profiles.active}
+    version: 1.0
