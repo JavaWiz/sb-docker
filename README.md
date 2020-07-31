@@ -1,10 +1,10 @@
-## Spring Boot with Docker
-This guide walks you through the process of building a Docker image for running a Spring Boot application.
+## Spring Boot in Docker Container
+This guide walks we through the process of building a Docker image for running a Spring Boot application.
 
-### What you’ll build
+### What we’ll build
 Docker is a Linux container management toolkit with a "social" aspect, allowing users to publish container images and consume those published by others. A Docker image is a recipe for running a containerized process, and in this guide we will build one for a simple Spring boot application.
 
-### What you’ll need
+### What we’ll need
 
 * About 15 minutes
 
@@ -14,12 +14,12 @@ Docker is a Linux container management toolkit with a "social" aspect, allowing 
 
 * Gradle 4+ or Maven 3.2+
 
-If we are NOT using a Linux machine, you will need a virtualized server. By installing VirtualBox, other tools like the Mac’s boot2docker, can seamlessly manage it for you. Visit VirtualBox’s download site and pick the version for your machine. Download and install. Don’t worry about actually running it.
+If we are NOT using a Linux machine, we will need a virtualized server. By installing VirtualBox, other tools like the Mac’s boot2docker, can seamlessly manage it for us. Visit VirtualBox’s download site and pick the version for our machine. Download and install. Don’t worry about actually running it.
 
-We will also need Docker, which only runs on 64-bit machines. See https://docs.docker.com/installation/#installation for details on setting Docker up for your machine. Before proceeding further, verify you can run docker commands from the shell. If you are using boot2docker you need to run that first.
+We will also need Docker, which only runs on 64-bit machines. See https://docs.docker.com/get-docker/ for details on setting Docker up for our machine. Before proceeding further, we can verify and run docker commands from the shell.
 
 ### Set up a Spring Boot app
-Now you can create a simple application.
+Now we can create a simple application.
 
 ```
 import org.springframework.boot.SpringApplication;
@@ -51,7 +51,7 @@ If we are using Maven, execute:
 mvn clean package && java -jar target/sb-docker-1.0.jar
 ```
 
-and go to [localhost:8080](localhost:8080) to see your "Hello Docker World" message.
+and go to [localhost:8080](localhost:8080) to see our "Hello Docker World" message.
 
 ### Containerize It
 Docker has a simple "Dockerfile" file format that it uses to specify the "layers" of an image. So let’s go ahead and create a Dockerfile in our Spring Boot project:
@@ -86,13 +86,13 @@ ENTRYPOINT ["java","-jar","/sb-docker.jar"]
 
 If we get that right, it already contains a BOOT-INF/lib directory with the dependency jars in it, and a BOOT-INF/classes directory with the application classes in it. Notice that we are using the application’s own main class com.javawiz.SbDockerApplication (this is faster than using the indirection provided by the fat jar launcher).
 
-To build the image you can use the Docker command line. For example:
+To build the image we can use the Docker command line. For example:
 
 ```
 docker build -t springio/sb-docker .
 ```
 
-you can run it like this
+We can run it like this
 
 ```
 docker run -p 8080:8080 springio/sb-docker
