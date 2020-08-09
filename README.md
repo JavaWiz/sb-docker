@@ -4,17 +4,7 @@ This guide walks us through the process of building a Docker image for running a
 ### What we’ll build
 Docker is a Linux container management toolkit with a "social" aspect, allowing users to publish container images and consume those published by others. A Docker image is a recipe for running a containerized process, and in this guide we will build one for a simple Spring boot application.
 
-### What we’ll need
-
-* About 15 minutes
-
-* A favorite text editor or IDE
-
-* JDK 1.8 or later
-
-* Gradle 4+ or Maven 3.2+
-
-If we are NOT using a Linux machine, we will need a virtualized server. By installing VirtualBox, other tools like the Mac’s boot2docker, can seamlessly manage it for us. Visit VirtualBox’s download site and pick the version for our machine. Download and install. Don’t worry about actually running it.
+If we are NOT using a Linux machine, we will need a virtualized server. By installing VirtualBox, other tools like the Mac’s boot2docker, can seamlessly manage it for us. Visit VirtualBox’s download site and pick the version for our machine. Download and install.
 
 We will also need Docker, which only runs on 64-bit machines. See https://docs.docker.com/get-docker/ for details on setting Docker up for our machine. Before proceeding further, we can verify and run docker commands from the shell.
 
